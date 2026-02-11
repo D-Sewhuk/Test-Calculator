@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Instant Calculator</title>
+    <title>RIT Instant Calculator</title>
     <style>
         * {
             margin: 0;
@@ -18,31 +18,39 @@
             align-items: center;
             justify-content: center;
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
-            background: #0d1117;
-            color: #e6edf3;
+            /* RIT Secondary Palette: Black */
+            background: #000000; 
+            /* RIT Primary Palette: White */
+            color: #FFFFFF;
             padding: 20px;
         }
 
         h1 {
-            font-size: 1.4rem;
-            font-weight: 500;
+            font-size: 1.6rem;
+            font-weight: 700;
             margin-bottom: 24px;
-            color: #8b949e;
-            letter-spacing: 0.02em;
+            /* RIT Primary Palette: Orange */
+            color: #F76902;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
         }
 
         .calculator {
-            background: #161b22;
-            border: 1px solid #30363d;
+            /* RIT Secondary Palette: Black */
+            background: #000000;
+            /* RIT Primary Palette: Orange Border */
+            border: 2px solid #F76902;
             border-radius: 16px;
             padding: 24px;
             width: 320px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+            box-shadow: 0 0 20px rgba(247, 105, 2, 0.2);
         }
 
         .display {
-            background: #0d1117;
-            border: 1px solid #30363d;
+            /* RIT Secondary Palette: Rich Black/Grey equivalent or Light Grey for contrast */
+            /* Using #D0D3D4 (Light Grey) for the screen to mimic a real LCD and provide contrast */
+            background: #D0D3D4;
+            border: 1px solid #7C878E;
             border-radius: 10px;
             padding: 16px 20px;
             margin-bottom: 20px;
@@ -51,19 +59,21 @@
             display: flex;
             flex-direction: column;
             justify-content: flex-end;
+            /* Dark text for the light screen */
+            color: #000000;
         }
 
         .display .previous {
             font-size: 0.9rem;
-            color: #484f58;
+            color: #555555;
             min-height: 1.2em;
             word-break: break-all;
         }
 
         .display .current {
             font-size: 2.2rem;
-            font-weight: 300;
-            color: #e6edf3;
+            font-weight: 600;
+            color: #000000;
             word-break: break-all;
             line-height: 1.2;
         }
@@ -78,53 +88,54 @@
             padding: 18px;
             font-size: 1.15rem;
             font-family: inherit;
-            border: 1px solid #30363d;
-            border-radius: 10px;
+            border: none;
+            border-radius: 8px;
             cursor: pointer;
-            transition: all 0.12s ease;
-            font-weight: 400;
-            background: #21262d;
-            color: #e6edf3;
+            transition: all 0.15s ease;
+            font-weight: 600;
+            /* RIT Primary Palette: White buttons */
+            background: #FFFFFF;
+            color: #000000;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.5);
         }
 
         button:hover {
-            background: #30363d;
+            filter: brightness(0.9);
+            transform: translateY(-1px);
         }
 
         button:active {
-            transform: scale(0.96);
+            transform: scale(0.96) translateY(0);
         }
 
         button.operator {
-            background: #1f6feb;
-            border-color: #1f6feb;
-            color: #fff;
-            font-weight: 500;
+            /* RIT Primary Palette: Orange */
+            background: #F76902;
+            color: #FFFFFF;
         }
 
         button.operator:hover {
-            background: #388bfd;
+            background: #d85a00; /* Slightly darker orange for hover state */
         }
 
         button.clear {
-            background: #da3633;
-            border-color: #da3633;
-            color: #fff;
+            /* RIT Accent Palette: Red */
+            background: #DA291C;
+            color: #FFFFFF;
         }
 
         button.clear:hover {
-            background: #f85149;
+            background: #b81e13;
         }
 
         button.equals {
-            background: #238636;
-            border-color: #238636;
-            color: #fff;
-            font-weight: 500;
+            /* RIT Accent Palette: Green */
+            background: #84BD00;
+            color: #FFFFFF;
         }
 
         button.equals:hover {
-            background: #2ea043;
+            background: #6a9600;
         }
 
         button.wide {
@@ -134,16 +145,20 @@
         .footer {
             margin-top: 32px;
             font-size: 0.8rem;
-            color: #484f58;
+            /* RIT Secondary Palette: Grey */
+            color: #7C878E;
         }
 
         .footer a {
-            color: #58a6ff;
+            /* RIT Primary Palette: Orange */
+            color: #F76902;
             text-decoration: none;
+            font-weight: bold;
         }
 
         .footer a:hover {
             text-decoration: underline;
+            color: #FFFFFF;
         }
     </style>
 </head>
